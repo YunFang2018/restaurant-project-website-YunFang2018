@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Nobel Prizes in {{category}}</title>
+  <!-- you can use this  stylesheet if you want -->
+  <link rel="stylesheet" href="prizes.css">
+  <!-- Student edition, for homework purposes -->
+</head>
+
+<body>
+  <main>
+    <h1>Nobel Prizes in {{category}} </h1>
+      <h2>From {{start}} to {{end}} </h2>
+      <nav>
+          <p> Other categories: 
+          {% for page in pages %}
+            <a href="{{page.fname}}">{{page.title}}</a> 
+          {% endfor %}
+<!-- Links to other pages. Generate these from data passed in -->
+          </p>
+      </nav>
+<table>
+    <thead>
+        <tr>
+            <th>Year</th>
+            <th>Name</th>
+            <th>Accomplishment</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+    {% for prize in prizes %}
+    {% for laureates in prize.laureates %} 
+
+    <tr>      
+    <td> {{prize.year}} </td> 
+    <td> {{laureates.firstname}} {{laureates.surname}} </td>
+    <td> {{laureates.motivation}} </td>
+    </tr>
+    {% endfor %}   
+    {% endfor %}
+    
+     
+<!-- Generate the table here. -->
+    </tbody>
+      </table>
+  </main>
+</body>
+
+</html>

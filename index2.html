@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- What else should be in the head? -->
+  <title>Yun's Restaurant</title>
+  <!--style sheet goes here  -->
+  <link href="css/style.css" rel="stylesheet" type="text/css"/>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <!-- Your content here! -->
+  <!-- Don't forget to structure it! -->
+  <header class="homeImage" id="home">
+    <img class="home-image" src="image/home.png" alt="homePicture" width="1550" height="800"> 
+    <div class="headText">   
+        <h1 class="restaurantname"><a href="index.html">Yun's Restaurant</a></h1>
+    </div>
+  </header>
+ <nav>
+   <ul class="nav nav-tabs navigation" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" style="color:#0F0F0F" role="tab" aria-controls="home" aria-selected="true">Menu</a>
+  </li>
+   <li class="nav-item">
+     <a class="nav-link" id="recommend-tab" data-toggle="tab" href="#recommend" style="color:#0F0F0F" role="tab" aria-controls="recommend" aria-selected="false">Recommend</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#reservation" style="color:#0F0F0F" role="tab" aria-controls="reservation" aria-selected="false">Reservation</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="service-tab" data-toggle="tab" href="#service" style="color:#0F0F0F" role="tab" aria-controls="service" aria-selected="false">Service</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" style="color:#0F0F0F" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+  </li>   
+</ul>
+ </nav>
+  <main>
+	<div class="tab-content" id="myTabContent">
+		<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+			<section id="menu">
+				<h1 align="center" id = "category">Category</h1>
+				<div class="container"> <!-- also try class="container-fluid" -->
+					<div class="row">
+						<div class="col">
+							<h4>Cheesecake</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-2">
+							<li class="food">Original</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							 <img src="image/cheesecake-Original.png" alt="Original" width="200" height="150" id="picleft"/>
+						</div>
+						<div class="col-md-4">
+							<p class="fooddescrption">The One that Started it All! Our Famous Creamy Cheesecake with a Graham Cracker Crust and Sour Cream Topping.0 </p>			
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-2">
+							<li class="food">Fresh Strawberry Cheesecake</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<img src="image/cheesecake-FreshStrawberryCheesecake.png" alt="FreshStrawberryCheesecake" width="200" height="150" id="picleft"/>
+						</div>
+                        <div class="col-md-4">
+							<p class="fooddescrption">The Original Topped with Glazed Fresh Strawberries. Our Most Popular Flavor for Over 35 Years! </p>			
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-2">
+							<li class="food">Chocolate Hazelunt Crunch Cheesecake</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<img src="image/cheesecake-ChocolateHazelnutCrunch.png" alt="SChocolateHazelnutCrunchs" width="200" height="150" id="picleft"/>			
+						</div>
+                         <div class="col-md-4">
+							<p class="fooddescrption">Chocolate Hazelnut Cheesecake Topped with Hazelnut Crunch and Nutella®</p>			
+						</div>
+					</div>
+                    <div class="row">
+						<div class="col-2">
+							<li class="food">Coffee and Cream Chocolate Supreme</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<img src="image/cheesecake-CoffeeCreamChocolateSupreme.png" alt="CoffeeCreamChocolateSupreme" width="200" height="150" id="picleft"/>			
+						</div>
+                         <div class="col-md-4">
+							<p class="fooddescrption">Cold Brew Coffee Cheesecake and Chocolate Cake topped with Coffee Mascarpone Mousse.</p>			
+						</div>
+					</div>
+                    <div class="row">
+						<div class="col-2">
+							<li class="food">Lemon Meringue Cheesecake</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<img src="image/cheesecake-LemonMeringue.png" alt="LemonMeringue" width="200" height="150" id="picleft"/>			
+						</div>
+                         <div class="col-md-4">
+							<p class="fooddescrption">Lemon Cream Cheesecake Topped with Layers of Lemon Mousse and Meringue.</p>			
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col">
+							<h4>Salads</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-2">
+							<li class="food">French Country Salad</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<img src="image/Salads-FrenchCountrySalad.png" alt="FrenchCountrySalad" width="200" height="150" id="picleft"/>
+						</div>
+                        <div class="col-md-4">
+                                <p class="fooddescrption">Mixed Greens, Grilled Asparagus, Fresh Beets, Goat Cheese, Candied Pecans and Vinaigrette.</p>			
+                        </div>
+                    </div>
+					<div class="row">
+						<div class="col-2">
+							<li class="food">Factory Chopped Salad</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<img src="image/Salads-FactoryChoppedSalad.png" alt="FactoryChoppedSala" width="200" height="150" id="picleft"/>
+						</div>
+                        <div class="col-md-4">
+                                <p class="fooddescrption">A Delicious Blend of Julienne Romaine, Grilled Chicken, Tomato, Avocado, Corn, Bacon, Blue Cheese and Apple with Our Vinaigrette.</p>			
+                        </div>
+                    </div>
+                    <div class="row">
+						<div class="col-2">
+							<li class="food">Chinese Chicken Salads</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<img src="image/Salads-ChineseChickenSalad.png" alt="ChineseChickenSalad" width="200" height="150" id="picleft"/>
+						</div>
+                        <div class="col-md-4">
+                                <p class="fooddescrption">Chicken Breast, Rice Noodles, Lettuce, Green Onions, Almonds, Crisp Wontons, Bean Sprouts, Orange and Sesame Seeds. Tossed in Our Special Chinese Plum Dressing.</p>			
+                        </div>
+                    </div>
+                    <div class="row">
+						<div class="col-2">
+							<li class="food">Chipotle Grilled Shrimp Salad</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<img src="image/Salads-ChipotleShrimpSalad.png" alt="ChipotleShrimpSalad" width="200" height="150" id="picleft"/>
+						</div>
+                        <div class="col-md-4">
+                                <p class="fooddescrption">With a Warm Grain Salad of Quinoa, Farro, Avocado, Corn, Black Beans, Peppers, Onion, Feta Cheese and Cilantro-Lime Dressing.</p>			
+                        </div>
+                    </div>
+                    <div class="row">
+						<div class="col-2">
+							<li class="food">Barbeque Ranch Chicken Salad</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<img src="image/Salads-BarbequeRanchChickenSalad.png" alt="BarbequeRanchChickenSalad" width="200" height="150" id="picleft"/>
+						</div>
+                        <div class="col-md-4">
+                                <p class="fooddescrption">Avocado, Tomato, Grilled Corn, Black Beans, Cucumber and Romaine All Tossed with Our Barbeque Ranch Dressing. Topped with Lots of Crispy Fried Onion Strings for Crunch.</p>			
+                        </div>
+                    </div>
+
+					<div class="row">
+						<div class="col">
+							<h4>Pizza</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-2">
+							<li class="food">OCheese Pizza</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							 <img src="image/Pizza-CheesePizza.png" alt="CheesePizza" width="200" height="150" id="picleft"/>
+						</div>
+						<div class="col-md-4">
+							<p class="fooddescrption">Our Cheese Pizza is Topped with Fresh Mozzarella, White Cheddar and Fontina Cheeses.</p>			
+						</div>
+					</div>
+                    <div class="row">
+						<div class="col-2">
+							<li class="food">Pepperoni Pizza</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							 <img src="image/Pizza-PepperoniPizza.png" alt="PepperoniPizza" width="200" height="150" id="picleft"/>
+						</div>
+						<div class="col-md-4">
+							<p class="fooddescrption">TOur Pepperoni Pizza comes with Fresh Mozzarella and Fontina Cheeses and is Topped with Pepperoni.</p>			
+						</div>
+					</div>
+                    <div class="row">
+						<div class="col-2">
+							<li class="food">Margherita Pizza</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							 <img src="image/Pizza-MargheritaPizza.png" alt="MargheritaPizza" width="200" height="150" id="picleft"/>
+						</div>
+						<div class="col-md-4">
+							<p class="fooddescrption">Fresh Mozzarella, Basil and Tomato Sauce</p>			
+						</div>
+					</div>
+                    <div class="row">
+						<div class="col-2">
+							<li class="food">B.B.Q. Chicken Pizza</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							 <img src="image/Pizza-BBQChickenPizza.png" alt="BBQChickenPizza" width="200" height="150" id="picleft"/>
+						</div>
+						<div class="col-md-4">
+							<p class="fooddescrption">Smoked Gouda, Red Onion and Cilantro.</p>			
+						</div>
+					</div>
+                    <div class="row">
+						<div class="col-2">
+							<li class="food">The Everything Pizza</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							 <img src="image/Pizza-TheEverythingPizza.png" alt="TheEverythingPizza" width="200" height="150" id="picleft"/>
+						</div>
+						<div class="col-md-4">
+							<p class="fooddescrption">Pepperoni, Sausage, Peppers, Onions, Mushrooms, Mozzarella and Tomato Sauce. Kalamata Olives on Request.</p>			
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col">
+							<h4>Pastas</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-2">
+							<li class="food">Lasagna Verde</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							 <img src="image/Pasta-LasagnaVerde.png" alt="LasagnaVerde" width="200" height="150" id="picleft"/>
+						</div>
+						<div class="col-md-4">
+							<p class="fooddescrption">Layers of Fresh Spinach Pasta, Mozzarella, Fontina and Parmesan Cheese. Covered with Our Housemade Tomato-Mushroom and Marinara Sauces.</p>			
+						</div>
+					</div>
+                    <div class="row">
+						<div class="col-2">
+							<li class="food">Fettuccini Alfredo</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							 <img src="image/Pasta-FettucciniAlfredo.png" alt="FettucciniAlfredo" width="200" height="150" id="picleft"/>
+						</div>
+						<div class="col-md-4">
+							<p class="fooddescrption"> Rich Parmesan Cream Sauce. Available with Chicken..</p>			
+						</div>
+					</div>
+                    <div class="row">
+						<div class="col-2">
+							<li class="food">Pasta Carbonara</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							 <img src="image/Pasta-PastaCarbonara.png" alt="PastaCarbonara" width="200" height="150" id="picleft"/>
+						</div>
+						<div class="col-md-4">
+							<p class="fooddescrption">paghettini with Smoked Bacon, Green Peas, and a Garlic-Parmesan Cream Sauce. Available with Chicken.</p>			
+						</div>
+					</div>
+                    <div class="row">
+						<div class="col-2">
+							<li class="food">Spaghetti and Meatballs</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							 <img src="image/Pasta-SpaghettiAndMeatballs.png" alt="SpaghettiAndMeatballs" width="200" height="150" id="picleft"/>
+						</div>
+						<div class="col-md-4">
+							<p class="fooddescrption">Housemade Meatballs Made with Beef, Italian Sausage and Parmesan with Our Tomato Sauce and Basil.</p>			
+						</div>
+					</div>
+                    <div class="row">
+						<div class="col-2">
+							<li class="food">Louisiana Chicken Pasta</li>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							 <img src="image/Pasta-LouisianaChickenPasta.png" alt="LouisianaChickenPasta" width="200" height="150" id="picleft"/>
+						</div>
+						<div class="col-md-4">
+							<p class="fooddescrption">Parmesan Crusted Chicken Served Over Pasta with Mushrooms, Peppers and Onions in a Spicy New Orleans Sauce.</p>			
+						</div>
+					</div>
+    	
+			</section>
+  </div>
+            
+ <div class="tab-pane fade" id="recommend" role="tabpanel" aria-labelledby="recommend-tab">
+  <div class="panel-group" id="accordion">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#cheesecakeoriginal" style="color:#330011" >
+					Cheesecake Original
+				</a>
+			</h4>
+		</div>
+		<div id="cheesecakeoriginal" class="panel-collapse collapse in">
+			<div class="panel-body">
+				  <p>
+					<div class="row">
+						<div class="col-md-4">
+							 <img src="image/cheesecake-Original.png" alt="Original" width="200" height="150" id="picleft"/>
+						</div>
+						<div class="col-md-4">
+							<p class="fooddescrption">The One that Started it All! Our Famous Creamy Cheesecake with a Graham Cracker Crust and Sour Cream Topping.0 </p>			
+						</div>
+					</div>
+                  </p>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#TheEverthingPizza"style="color:#330011">
+					The Everthing Pizza
+				</a>
+			</h4>
+		</div>
+		<div id="TheEverthingPizza" class="panel-collapse collapse">
+			<div class="panel-body">
+				 <p>
+                    <div class="row">
+						<div class="col-md-4">
+							 <img src="image/Pizza-TheEverythingPizza.png" alt="TheEverythingPizza" width="200" height="150" id="picleft"/>
+						</div>
+						<div class="col-md-4">
+							<p class="fooddescrption">Pepperoni, Sausage, Peppers, Onions, Mushrooms, Mozzarella and Tomato Sauce. Kalamata Olives on Request.</p>			
+						</div>
+					</div>
+                </p>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#SpaghettiandMeatballs"style="color:#330011">
+					Spaghetti and Meatballs
+				</a>
+			</h4>
+		</div>
+		<div id="SpaghettiandMeatballs" class="panel-collapse collapse">
+			<div class="panel-body">
+				<p>
+                   <div class="row">
+						<div class="col-md-4">
+							 <img src="image/Pasta-SpaghettiAndMeatballs.png" alt="SpaghettiAndMeatballs" width="200" height="150" id="picleft"/>
+						</div>
+						<div class="col-md-4">
+							<p class="fooddescrption">Housemade Meatballs Made with Beef, Italian Sausage and Parmesan with Our Tomato Sauce and Basil.</p>			
+						</div>
+					</div>
+                </p>       
+			</div>
+		</div>
+	</div>
+</div> 
+</div>            
+            
+  <div class="tab-pane fade" id="reservation" role="tabpanel" aria-labelledby="profile-tab">
+       	<section id="reservation">
+    	<h3>Make A Reservation</h3>
+            <form action="#">
+                <div class="form-group">
+                    <label for="activities">People</label>
+                    <select name="#" id="activities" class="form-control">
+                        <option value="">number</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5 ~ 10</option>
+                        <option value="">11+</option>
+                    </select>                   
+                </div>
+                <div class="form-group">
+                    <label for="date-start">Date</label>
+                    <input type="text" id="date" class="form-control" placeholder="mm/dd/yyyy">
+                </div>
+                <div class="form-group">
+                    <label for="date-start">Time</label>
+                    <input type="text" id="time" class="form-control">
+                </div>    
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary btn-block" value="Reserve Now">
+                </div>
+            </form>	     
+    </section>
+  </div>
+  <div class="tab-pane fade" id="service" role="tabpanel" aria-labelledby="service-tab">
+  <div class="panel-group" id="accordion">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#OrderDelivery"style="color:#330011">
+					Order Delivery
+				</a>
+			</h4>
+		</div>
+		<div id="OrderDelivery" class="panel-collapse collapse in">
+			<div class="panel-body">
+				  <p>
+                      We're partnering with <a href="https://www.ups.com/ship/?loc=en_US/"style="color:#330011">UPS</a> to bring The Cheesecake straight to your door. 
+                  </p>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#ShipACheesecakeg"style="color:#330011">
+					Ship A Cheesecake
+				</a>
+			</h4>
+		</div>
+		<div id="ShipACheesecakeg" class="panel-collapse collapse">
+			<div class="panel-body">
+				 <p>
+                     Transform any occasion into a memorable event with rich cakes and creamy cheesecakes from our restaurant.
+                </p>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#AtHomeRetailProducts"style="color:#330011">
+					At Home Retail Products
+				</a>
+			</h4>
+		</div>
+		<div id="AtHomeRetailProducts" class="panel-collapse collapse">
+			<div class="panel-body">
+				<p>
+                    We are excited to be introducing Cheesecake At Home - a line of delicious products that can be enjoyed at home.
+                </p>       
+			</div>
+		</div>
+	</div>
+</div>
+
+  </div>
+   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+	<section id="contact">
+    <h3>Contact Us ^_^</h3>
+        <form action="#">
+            <div class="form-group">
+             	<label for="firstname">First Name</label>
+                <input type="text" id="name" class="form-control" placeholder="firstname">                
+            </div>
+            <div class="form-group">
+             	<label for="lastname">Last Name</label>
+                <input type="text" id="name" class="form-control" placeholder="lastname">                
+            </div>
+            <div class="form-group">
+                <label for="email">Phone Number</label>
+                <input type="text" id="phonenumber" class="form-control" placeholder="phone number">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" class="form-control" placeholder="email address">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" cols="20" rows="10" class="form-control" placeholder="feedback"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Send" class="btn btn-primary">
+            </div>
+
+        </form>		
+    	
+    </section>
+  </div>
+</div>
+  	
+  </main>
+  <footer>
+  	<p>Address: 22560 Foothill Blvd, Hayward, CA 94541</p>
+    <img src="image/location.png" alt="location" width="400" height="200" id="piccenter"/>
+    <p>
+        Open Hours:<br>
+        Sunday - Thursday 11:00 ~ 21:00 <br>
+	    Friday - Saturday 11:00 - 22:00 <br>
+    </p>
+  </footer>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.js" ></script>
+</body>
+</html>
