@@ -1,0 +1,7 @@
+[{"title": "Home", "url": "index.html"},
+ {"title": "Menu", "url": "menu.html"},
+ {"title": "Recommend", "url": "recommend.html"},
+ {"title": "Reservation", "url": "reservation.html"},
+ {"title": "Contact Us", "url": "contact.html"},
+ {"title": "Service", "url": "service.html"}
+]

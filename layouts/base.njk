@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{title}}</title>
+      <meta name="author" content="{{author}}" >
+      <meta name="description" content="{{description}}" >
+      <link href="../css/style.css" rel="stylesheet" type="text/css"/>
+      <link rel="stylesheet" href="../css/bootstrap.css">
+      {% include "bg.njk" %}
+  </head>
+<body>
+{% include "nav.njk" %}
+  <main>
+      
+      {% if layouts=="index"%}
+      	{{contents | safe}} 
+      	{% include "home.njk" %}
+      {% endif%}
+      {% if layouts=="menu"%}
+      	{{contents | safe}} 
+      	{% include "foodmenu.njk" %}
+      {% endif%}
+      {% if layouts=="recommend"%}
+      	{{contents | safe}} 
+      	{% include "recommend.njk" %}
+      {% endif%}
+      {% if layouts=="reservation"%}
+      	{{contents | safe}} 
+      	{% include "reservation.njk" %}
+      {% endif%}
+      {% if layouts=="service"%}
+      	{{contents | safe}} 
+      	{% include "service.njk" %}
+      {% endif%}
+      {% if layouts=="contact"%}
+      	{{contents | safe}} 
+      	{% include "contact.njk" %}
+      {% endif%}
+
+  </main>
+  {% include "footer.njk" %}
+<script src="../js/jquery-3.3.1.min.js"></script>
+ <script src="../js/bootstrap.bundle.js" ></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<section id="menu">
+	<div class="container"> 
+		{%for cats in menu.foodCats%}
+		{%for cat,foods in cats%}
+		<div class="row">
+			<div class="col">
+				<h4>{{cat}}</h4>
+			</div>
+		</div>
+			{%for food in foods%}
+				<div class="row">
+					<div class="col-2">
+						<li class="food">{{food.name}} {{food.price}}</li>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						 <img src="../image/{{food.name}}.png" alt="{{food.name}}" width="200" height="150" id="{{food.name}}"/>
+					</div>
+					<div class="col-md-4">
+						<p class="fooddescrption">{{food.description}}</p>			
+					</div>
+				</div>
+			{%endfor%}
+			{%endfor%}
+		{%endfor%}
+	</div>
+</section>

@@ -1,0 +1,62 @@
+  {"foodCats": [ 
+    {"Cheesecake": [
+        {"name": "Original", "price": "$6.00",
+"description": "The One that Started it All! Our Famous Creamy Cheesecake with a Graham Cracker Crust and Sour Cream Topping."}, 
+        {"name": "Fresh Strawberry Cheesecake", "price": "$6.50",
+"description": "The Original Topped with Glazed Fresh Strawberries. Our Most Popular Flavor for Over 35 Years!"},
+        {"name": "Chocolate Hazelunt Crunch Cheesecake", "price": "$6.90",
+"description": "Chocolate Hazelnut Cheesecake Topped with Hazelnut Crunch and Nutella®"}, 
+        {"name": "Coffee and Cream Chocolate Supreme", "price": "$6.50",
+"description": "Cold Brew Coffee Cheesecake and Chocolate Cake topped with Coffee Mascarpone Mousse."}, 
+        {"name": "Lemon Meringue Cheesecake", "price": "$6.00",
+"description": "Lemon Cream Cheesecake Topped with Layers of Lemon Mousse and Meringue."}
+    ]}, 
+    {"Salads": [
+        {"name": "French Country Salad", "price": "$5.50",
+"description": "Mixed Greens, Grilled Asparagus, Fresh Beets, Goat Cheese, Candied Pecans and Vinaigrette."}, 
+        {"name": "Factory Chopped Salad", "price": "$6.30",
+"description": "A Delicious Blend of Julienne Romaine, Grilled Chicken, Tomato, Avocado, Corn, Bacon, Blue Cheese and Apple with Our Vinaigrette."}, 
+        {"name": "Chinese Chicken Salad", "price": "$6.50",
+"description": "Chicken Breast, Rice Noodles, Lettuce, Green Onions, Almonds, Crisp Wontons, Bean Sprouts, Orange and Sesame Seeds. Tossed in Our Special Chinese Plum Dressing."}, 
+        {"name": "Chipotle Grilled Shrimp Salad", "price": "$6.90",
+"description": "With a Warm Grain Salad of Quinoa, Farro, Avocado, Corn, Black Beans, Peppers, Onion, Feta Cheese and Cilantro-Lime Dressing."}, 
+        {"name": "Barbeque Ranch Chicken Salad", "price": "$6.90",
+"description": "Avocado, Tomato, Grilled Corn, Black Beans, Cucumber and Romaine All Tossed with Our Barbeque Ranch Dressing. Topped with Lots of Crispy Fried Onion Strings for Crunch."}
+    ]}, 
+    {"Pizza": [
+        {"name": "Cheese Pizza", "price": "$7.50",
+"description": "Our Cheese Pizza is Topped with Fresh Mozzarella, White Cheddar and Fontina Cheeses."}, 
+        {"name": "Pepperoni Pizza", "price": "$7.70",
+"description": "Our Pepperoni Pizza comes with Fresh Mozzarella and Fontina Cheeses and is Topped with Pepperoni."},
+        {"name": "Margherita Pizza", "price": "$7.90",
+"description": "Fresh Mozzarella, Basil and Tomato Sauce."}, 
+        {"name": "B.B.Q. Chicken Pizza", "price": "$7.90",
+"description": "Smoked Gouda, Red Onion and Cilantro."}, 
+        {"name": "The Everything Pizza", "price": "$8.00",
+"description": "Pepperoni, Sausage, Peppers, Onions, Mushrooms, Mozzarella and Tomato Sauce. Kalamata Olives on Request."}
+    ]}, 
+    {"Pasta": [
+        {"name": "Lasagna Verde", "price": "$7.50",
+"description": "Layers of Fresh Spinach Pasta, Mozzarella, Fontina and Parmesan Cheese. Covered with Our Housemade Tomato-Mushroom and Marinara Sauces."}, 
+        {"name": "Fettuccini Alfredo", "price": "$7.60",
+"description": "A Rich Parmesan Cream Sauce. Available with Chicken."},
+        {"name": "Pasta Carbonara", "price": "$7.99",
+"description": "Spaghettini with Smoked Bacon, Green Peas, and a Garlic-Parmesan Cream Sauce. Available with Chicken."}, 
+        {"name": "Spaghetti and Meatballs", "price": "$8.10",
+"description": "Housemade Meatballs Made with Beef, Italian Sausage and Parmesan with Our Tomato Sauce and Basil."}, 
+        {"name": "Louisiana Chicken Pasta", "price": "$8.50",
+"description": "Parmesan Crusted Chicken Served Over Pasta with Mushrooms, Peppers and Onions in a Spicy New Orleans Sauce."}
+    ]}, 
+    {"Specialties": [
+        {"name": "Thai Coconut-Lime Chicken", "price": "$8.50",
+"description": "Tender Pieces of Chicken, Snow Peas, Shiitake Mushrooms, Onions and Garlic in a Thai Coconut-Curry Sauce with Cashews, and Mango. Served with White Rice."}, 
+        {"name": "Crispy Pineapple Chicken and Shrimp", "price": "$8.60",
+"description": "Crispy Chicken and Shrimp with Snow Peas, Mushrooms, Onions, Garlic, Peppers and Cilantro in a Sweet and Spicy Sauce. Served with White Rice."},
+        {"name": "Chicken Riesling", "price": "$8.79",
+"description": "Chicken Breast, Mushrooms, Bacon, Onions and Garlic in a White Wine Riesling Cream Sauce with Buttered Parmesan Pasta."}, 
+        {"name": "Truffle-Honey Chicken", "price": "$8.59",
+"description": "Fried Chicken Breast with Truffle-Honey, Asparagus and Mashed Potatoes."}, 
+        {"name": "Chicken Enchiladas", "price": "$7.99",
+"description": "Covered with Our Red Chile Sauce and Melted Cheese. Served with Black Beans, Cilantro Rice and Corn tomatoes."}
+    ]}
+]}

@@ -1,0 +1,12 @@
+{
+    "name": "YunFanWei",
+    "version": "0.0.1",
+    "dependencies": {
+        "jstransformer-nunjucks": "^0.5.0",
+        "metalsmith": "^2.3.0",
+        "metalsmith-layouts": "^2.2.0",
+        "metalsmith-markdown": "^1.0.1",
+        "node": "^10.10.0",
+        "yaml": "^1.0.0"
+    }
+}
