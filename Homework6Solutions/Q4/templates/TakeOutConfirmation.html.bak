@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><meta charset="utf-8">
+        <title>Get Form Handler Example</title>
+		<link rel="stylesheet" href="bottleMessage.css">
+    </head>
+    <body>
+        <div class="message">
+            <h2>Order Confirmation</h2>
+			<table>
+            {% for cat, items in menu %}
+            <div class="menuItems">
+            {% for item in items %}
+				<tr>
+                <td><span>{{ item.name }}</span></td><td><span>{{item.num}}</span></td><td>itemTotal:${{item.iTotal}}</td>
+				</tr>
+            {% endfor %}
+            </div>
+        {% endfor %}
+		<tr>
+		<td>---------------------------------------------------------------------------------------------------------------------<br>subTotal:{{subTotal}}</td><td>Tax:{{tax}}</td><td>Total:{{total}}</td>
+		</tr>
+		</table>
+        </div>
+    </body>
+</html>

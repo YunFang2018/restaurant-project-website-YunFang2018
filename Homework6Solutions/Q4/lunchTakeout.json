@@ -1,0 +1,23 @@
+{ "title": "Lunch Web Takeout Menu",
+  "subTotal":0,
+  "tax":0,
+  "total":0,
+  "menu": {
+    "Starters": [
+      {"name": "Chicken Satay", "price": 8.95,"num":0,"iTotal":0},
+      {"name": "Beef Satay", "price": 8.95,"num":0,"iTotal":0},
+      {"name": "Crunch Green Bean", "price": 7.95,"num":0,"iTotal":0}
+    ],
+    "Entries": [
+      {"name": "Pad Thai", "price": 8.95,"num":0,"iTotal":0},
+      {"name": "Red Curry Beef", "price": 10.95,"num":0,"iTotal":0},
+      {"name": "Green Vegetarian Curry", "price": 9.95,"num":0,"iTotal":0},
+      {"name": "Yellow Chicken Curry", "price": 10.95,"num":0,"iTotal":0}
+    ],
+    "Drinks": [
+      {"name": "Thai Iced Tea", "price": 3.50,"num":0,"iTotal":0},
+      {"name": "Thai Iced Coffee", "price": 3.50,"num":0,"iTotal":0},
+      {"name": "Real Lemmonade", "price": 3.00,"num":0,"iTotal":0}
+    ]
+}
+}

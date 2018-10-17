@@ -1,0 +1,20 @@
+<div class="panel-group" id="accordion">
+  	{%for item in info%}
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" 
+				   href="#{{item.name}}" style="color:#330011">
+					{{item.name}}
+				</a>
+			</h4>
+		</div>
+		<div id="{{item.name}}" class="panel-collapse collapse in">
+			<div class="panel-body">
+				  <p>{{item.description}}</p>
+			</div>
+		</div>
+	</div>
+	{%endfor%}
+</div>
+

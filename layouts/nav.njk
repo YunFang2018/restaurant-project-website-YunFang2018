@@ -1,0 +1,15 @@
+<nav class="navbar navbar-light" style="background-color: #967272;">
+  <div class="container">
+    <a class="navbar-brand" href="#">Yun's Restaurant</a>
+     <ul class="nav nav-tabs navigation" id="myTab" role="tablist">
+      {%for item in links %}
+	<li class="nav-item active">
+		<a class="nav-link" style="color:#330011" href="{{item.url}}">{{item.title}}</a>
+	</li>
+      {%endfor%}
+    </ul>
+  </div>
+  </div>
+</nav>
+
+
