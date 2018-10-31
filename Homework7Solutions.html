@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- html is the "root" element it can have
+     one "head" and one "body" element -->
+
+<head>
+  <meta charset="utf-8">
+  <title>Questions and Answers for Week 7</title>
+  <!-- I couldn't help it, it was just too ugly without
+    a little style. -->
+  <style>
+  h1 {
+    font-family:sans-serif;
+    text-align: center;
+  }
+  main {
+    margin: 2em;
+    border: purple 20px solid;
+    padding: 1em;
+    background-color: white;
+  }
+  body {
+      background-color: #cde2f5;
+  }
+
+  </style>
+</head>
+
+<body>
+  <main>
+    <header><h1>Week #7 Questions and Answers</h1></header>
+    <section>  
+<section class="question1">
+<header><h2>Question1</h2></header>
+<header><h3>(a) Asynchronous Javascript</h3></header>
+<h5>
+<p>Question: What will the following code print out, and more importantly why?</p>  
+<p>
+Answer: Using setTimeout method, after passing 1000 millisec, the setTimeout executed the funcitoon advanceTime once. In advanceTime function, current time - last execute time so that elapsedTime will print out 1.    
+</p>
+<p><img src="image/1a.png" height="100" width="200" /></p>
+</h5>
+          
+<header><h3>(b) Promises, Promises</h3>
+<h5>     
+<p>Question: To fix the code in part (a) I used promises as shown below. Does this work better? Why or why not? And if not what did I do wrong?</p>           <p>Answer: No, the elapsedTime didn't resolves in one second.
+</p>
+<p><img src="image/1b1.png" height="80" width="200" /></p>
+<p>
+Cannot directly call the advanceTime() 4 times. Using promises can implement Asynchronous.
+we can use the code below to repace the advanceTime() called four times. 
+</p>    
+<pre>Code:  
+advanceTime();
+let p1= oneSecond();
+let p2= p1.then(advanceTime);
+let p3= p2.then(advanceTime);
+let p4= p3.then(advanceTime);
+</pre>  
+<p>            
+<img src="image/1b2.png" height="100" width="200" />
+</p>    
+</h5>
+  
+<header><h3>(c)Requests in Series with Promises</h3> 
+<h5>
+<p>
+Question: Choose three websites in three different countries to visit. Modify the file threeInOrder.js to visit these sites in an order of your choosing. Show modified code and output here. What’s the main advantage of promises in this case?    
+</p>
+<pre>Code:
+const rp = require('request-promise-native');
+let site1 = {
+    uri: 'https://tw.yahoo.com/',
+    method: 'HEAD', // What does this do?
+    resolveWithFullResponse: true
+};
+
+let site2 = {
+    uri: 'http://www.google.com',
+    method: 'HEAD',
+    resolveWithFullResponse: true
+};
+
+let site3 = {
+    uri: 'https://www.momoshop.com.tw/main/Main.jsp',
+    method: 'HEAD',
+    resolveWithFullResponse: true
+};
+
+let start = new Date();
+rp(site1).then(res => {
+    // console.log(`Grotto status: ${JSON.stringify(res)}`);
+    let time = (new Date() - start)/1000;
+    console.log(`tw.yahoo status: ${res.statusCode}, time: ${time}`);
+    return rp(site2);
+}).then(res => {
+    let time = (new Date() - start)/1000;
+    console.log(`Google status: ${res.statusCode}, time: ${time}`);
+    return rp(site3);
+}).then(res => {
+    let time = (new Date() - start)/1000;
+    console.log(`momo shopping status: ${res.statusCode}, time: ${time}`);
+})
+console.log("Starting my web requests:");
+</pre>
+<P>
+Answer: Promises can help us to verify url accessibility, we can use the rp(site).then, to print the the items sequentially easily by using promise.
+</P>
+<p><img src="image/1c.png" height="100" width="400" /></p>
+</h5>
+    
+<header><h3>(d)Requests in Parallel with Promises</h3>
+<h5>
+<P>
+Question:With the three websites from part (c) modify the file threeInParallel.js show your modified code and output here. Do promises offer an advantage here?
+</P>
+<pre>Code:
+const rp = require('request-promise-native');
+let site1 = {
+    uri: 'https://tw.yahoo.com/',
+    method: 'HEAD', // What does this do?
+    resolveWithFullResponse: true
+};
+
+let site2 = {
+    uri: 'http://www.google.com',
+    method: 'HEAD',
+    resolveWithFullResponse: true
+};
+
+let site3 = {
+    uri: 'https://www.momoshop.com.tw/main/Main.jsp',
+    method: 'HEAD',
+    resolveWithFullResponse: true
+};
+
+let start = new Date();
+let p1 = rp(site1).then(res => {
+    // console.log(`Grotto status: ${JSON.stringify(res)}`);
+    let time = (new Date() - start)/1000;
+    return console.log(`tw.yahoo status: ${res.statusCode}, time: ${time}`);});
+
+let p2 = rp(site2).then(res => {
+    let time = (new Date() - start)/1000;
+    return console.log(`Google status: ${res.statusCode}, time: ${time}`);
+});
+
+let p3 = rp(site3).then(res => {
+    let time = (new Date() - start)/1000;
+    return console.log(`momo shopping status: ${res.statusCode}, time: ${time}`);
+});
+
+console.log("Starting my web requests:");
+Promise.all([p1, p2, p3]).then(x=>{
+    console.log("All Finished");
+});
+</pre>
+<p>Answer: Yes. Because The Promise.all() method returns a single Promise that resolves when all of the promises in the iterable argument have resolved.
+</p>
+<p><img src="image/1d.png" height="100" width="400" /></p>
+</h5>
+            
+</section>
+    
+<section class="question2">
+<header><h2>Question2</h2></header>
+<h3><header><p>(a) JSON Server and Database</p</header></h3>
+<h5>
+<pre>Code:
+app.put("/register", function (req, res) {
+    var name = req.body.name;
+    var nickname = req.body.nickname;
+    var json = {};
+    db.users.find({name: name}, function (err, docs) {
+        if (docs.length != 0) {
+            json.registration = "failed";
+            json.reason = "user exists";
+            json.name = name;
+            res.send(json);
+        } else {
+            db.users.insert(req.body, function (err, newDoc) {
+                if (!err) {
+                    json.resistration = "succeeded";
+                    json.reason = "nothing on success";
+                    json.user = name;
+                    res.send(json);
+                }
+            })
+        }
+    })
+});
+
+</pre>
+</h5>
+    
+<header><h3>(b) Test the “/register” path</h3></header>
+<h5>
+<pre>Code:
+var request = require("request");
+var users = [
+    {name: "AAAA", nickname: "aaaa"},
+    {name: "BBBB", nickname: "bbbb"},
+    {name: "CCCC", nickname: "cccc"},
+    {name: "DDDD", nickname: "dddd"},
+    {name: "EEEE", nickname: "eeee"}
+];
+
+var url = 'http://localhost:3000/register';
+users.forEach(function (e) {
+    request.put({url: url, form: e}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(body + "\n");
+        }
+    })
+});
+</pre>
+</h5>
+<p><img src="image/2.b1.png" height="180" width="500" /></p>
+<p><img src="image/2.b2.png" height="170" width="500" /></p>
+     
+<header><h3>(c) Add an “/allUsers” path and functionality</h3></header>
+<h5>
+<pre>Code:
+app.get("/allUsers", function (req, res) {
+var json = {
+    date: new Date().toLocaleString()
+};
+
+db.users.find({}, {name: 1, _id: 0}, function (err, docs) {
+    json.users = docs;
+    res.send(json);
+})
+});
+</pre>
+</h5>    
+  
+<header><h3>(d) Test the “/allUsers” path</h3></header>
+<h5>    
+<pre>Code:
+var request = require("request");
+var url = 'http://localhost:3000/allUsers';
+request.get({url: url}, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+        console.log(body + "\n");
+    }
+});
+</pre>
+</h5>    
+<p><img src="image/2.d.png" height="60" width="500" /></p>
+      
+<header><h3>(e) Nickname interface</h3></header>
+<h5>
+<pre>Code:
+app.post("/nickname", function (req, res) {
+    var name = req.body.user;
+    db.users.findOne({name: name}, function (err, docs) {
+        if (docs == null) {
+            res.send({user: name, err: "Not Found"});
+        } else {
+            res.send({
+                user: name,
+                nickname: docs.nickname
+            })
+        }
+    });
+});
+</pre>
+</h5>    
+    
+<header><h3>(f) Test the Nickname interface</h3></header>
+<h5>
+<pre>Code:
+var request = require("request");
+
+var url = 'http://localhost:3000/nickname';
+
+request.post({url: url, form: {user: "AAAA"}}, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+        console.log(body + "\n");
+    }
+});
+
+request.post({url: url, form: {user: "BBBB"}}, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+        console.log(body + "\n");
+    }
+});
+
+request.post({url: url, form: {user: "ZZZZ"}}, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+        console.log(body + "\n");
+    }
+});
+</pre>
+</h5>
+<p><img src="image/2.f.png" height="90" width="300" /></p>
+</section>
+  
+<section class="question3">
+<header><h2>Question3</h2></header>
+<header><h3>(a) The Cookies Path Attribute</h3></header>
+<h5>
+<pre>Code:
+app.get("/", function (req, res) {
+    res.cookie("name", "home", {path: "/", httpOnly: false});
+    res.cookie("sp", "sun", {path: "/sun", httpOnly: false});
+    res.cookie("sd", "moon", {path: "/moon", httpOnly: false});
+    res.send("/");
+});
+
+app.get("/sun", function (req, res) {
+    res.send("/I have a sun");
+});
+app.get("/moon", function (req, res) {
+    res.send("/I have a moon");
+});
+</pre>
+<h5>
+<p>
+Question: Explain the behavior you are seeing as far as which cookies get sent to which pages.    
+</p>
+<p>
+Answer: When the client receives the cookie, it saves the cookie to the local. When we get path we chose, the client will send the locally cookie to the server. The server will show the cookie which it get from the client.
+</p>
+</h5>
+          
+<header><h3>(b) Cookies and the Request Library</h3></header>
+<p><img src="image/3.b.png" height="70" width="280" /></p>
+<h5>
+<p>
+Question: Are these results consistent with those in part (a) or different? Explain?
+</p>
+<p>
+Answer: It's different. Client didn't access to the server first, so the server haven't set any cookie. Therefore, the client don't have any cookie and server will not show any cookie.
+</p>
+</h5>
+          
+<header><h3>(c) Using Cookies with the Request Library</h3></header>
+<p><img src="image/3.c.png" height="100" width="350" /></p>
+</section>
+
+<section class="question4">
+<header><h2>question4</h2></header>
+<header><h3>(a) Password Authentication</h3></header>
+<h5><p>/registration:</p></h5>  
+<h5>    
+<pre>
+var request = require("request");
+var users = [
+    {name: "AAAA2", nickname: "aaaa2", password: "12345"},
+    {name: "BBBB2", nickname: "bbbb2", password: "monkey"},
+    {name: "CCCC2", nickname: "cccc2", password: "1q2w3e4r"},
+    {name: "DDDD2", nickname: "dddd2", password: "qwerasdf"},
+    {name: "EEEE2", nickname: "eeee2", password: "xyz"}
+];
+
+var url = 'http://localhost:3000/registration';
+users.forEach(function (e) {
+    request.post({url: url, form: e}, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(body + "\n");
+        }
+    })
+});
+</pre>
+</h5>
+<p><img src="image/4.a.png" height="300" width="500" /></p>
+ 
+<header><h3>(b) Restricting Access to Interfaces</h3></header>
+<h5><p>modified /allUsers: </p></h5>
+<h5>
+<pre>
+app.post("/allUsersUpdate", function (req, res) {
+    db.users.findOne({name: req.body.Rname}, function (err, docs) {
+        if (docs != null && bcrypt.compareSync(req.body.Rpassword, docs.password)) {
+            db.users.find({}, {name: 1, _id: 0}, function (err, docs) {
+                res.send({
+                    date: new Date().toLocaleString(),
+                    users: docs
+                });
+            })
+        } else {
+            res.send({info: "invalid password or name"});
+        }
+    })
+});
+</pre>
+</h5>
+<h5>
+<p>
+modified /allUsers Testing code: 
+</p>
+</h5>
+<h5>    
+<pre>
+var request = require("request");
+
+var url = 'http://localhost:3000/allUsersUpdate';
+
+
+var data = {
+    Rname: "AAAA2",
+    Rpassword: "12345"
+}
+request.post({url: url, form: data}, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+        console.log(body + "\n");
+    }
+});
+</pre>
+</h5>
+<p><img src="image/4b1.png" height="80" width="500" /></p>
+<h5>
+<p>
+modified /nickname: 
+</p>
+</h5>
+<h5>    
+<pre>         
+app.post("/nicknameUpdate", function (req, res) {
+    db.users.findOne({name: req.body.Rname}, function (err, docs) {
+        if (docs != null && bcrypt.compareSync(req.body.Rpassword, docs.password)) {
+            db.users.findOne({name: req.body.user}, {name: 1, nickname: 1, _id: 0}, function (err, docs) {
+                res.send(docs);
+            })
+        } else {
+            res.send({info: "invalid password or name"});
+        }
+    })
+});
+</pre>
+</h5>
+<h5>
+<p>
+modified /nickname Testing code: 
+</p>
+</h5>
+<h5>
+<pre>
+var request = require("request");
+
+var url = 'http://localhost:3000/nicknameUpdate';
+var data = [
+    {Rname: "AAAA2", Rpassword: "12345", user: "CCCC2"},//(i) authenticated request with user name in data base
+    {Rname: "ZZZZ", Rpassword: "12345", user: "CCCC2"},//(ii) authenticated request with user name not in data base
+    {Rname: "AAAA2", Rpassword: "xyz", user: "CCCC2"}//(iii) request with invalid password or requestor name.
+];
+
+
+data.forEach(function (e) {
+    request.post({url: url, form: e}, function (error, response, body) {
+        console.log(body + "\n");
+    });
+});
+</pre>
+</h5>
+<p><img src="image/4b2.png" height="80" width="300" /></p>
+</section>
+
+<section class="question5">    
+<header><h2>question5</h2></header>
+<header><h3>(a) Changing the “session fingerprint”</h3></header>
+<h5>
+<p>Question: Modify the expressSessionTest1.js code so that the name of the cookie corresponds to your NetId. Demonstrate this by running the server code and pointing your browser at the “/” path. Open up the devlopment panel and find the cookie. Take a screen shot showing the cookie set by the middleware and the name you gave to it.
+</p>
+</h5>
+<p><img src="image/5a.png" height="300" width="600" /></p>
+
+<header><h3>(b) Verify session ID changes on login</h3></header>
+<h5>    
+<p>Question: Verify that the session id changes when the user “logs in”. Show two screen shots one for before the user logs in and one after. Have the cookie value showing in the developer panel. Find the code that does this in the expressSessionTest1.js and paste it here.
+</p>
+</h5>
+<p><img src="image/5b1.png" height="300" width="600" /></p>
+<p><img src="image/5b2.png" height="300" width="600" /></p>
+<h5>
+<pre>
+app.get('/', function (req, res) { // Initializes session information
+    console.log(`session object: ${JSON.stringify(req.session)}`);
+    console.log(`session id: ${req.session.id}`);
+    res.cookie("name", "9932");
+    if (!req.session.user) {
+        req.session.user = {loggedin: false, wavecount: 0, windcount: 0};
+    }
+    let user = req.session.user;
+    let message = `Hi! logged in: ${user.loggedin}, waves: ${user.wavecount}, wind: ${user.windcount}`;
+    res.send(message);
+});
+
+app.get('/login', function (req, res, next) {
+    if (!req.session.user) {
+        res.redirect("/");  // Make users start on the home page to initialize things.
+    } else {
+        // Save session information, create a new session
+        let oldInfo = req.session.user;
+        req.session.regenerate(function (err) {
+            req.session.user = Object.assign({}, oldInfo, {loggedin: true});
+            res.send('You are logged in!');
+        });
+    }
+});
+</pre>
+</h5>
+    
+<header><h3>(c) Show access restrictions</h3></header> <h5> 
+<p>Question: Without being “logged in” show that access is restricted to the “/wind” path, but not the “/wave” path (show screen shots). Find the code that performs the access restriction on the “/wind” path in expressSessionTest1.js and paste it here.
+</p>
+</h5>
+<p><img src="image/5c1.png" height="300" width="600" /></p>
+<p><img src="image/5c2.png" height="300" width="600" /></p>
+<h5>
+<pre>
+app.get('/wind', function (req, res, next) {
+    if (!req.session.user) {
+        res.redirect("/");  // Make users start on the home page to initialize things.
+    } else {
+        if (req.session.user.loggedin) {
+            req.session.user.windcount += 1;
+            res.send(`Wind: wind count: ${req.session.user.windcount}`);
+        } else {
+            res.send(`Sorry you have to login to see the wind!`);
+        }
+    }
+});
+</pre>
+</h5>  
+    
+<header><h3>(d) Deleting cookies</h3></header>  
+<p><img src="image/5d2.png" height="500" width="600" /></p>    
+<p><img src="image/5d.png" height="500" width="600" /></p>
+<h5>
+<p>
+Answer: cookie value and max-age have changed. 
+</p>
+</h5>
+</section>
+</section>
+<p>--------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+<section>
+<header><h3>Project Plan</h3></header> 
+<p><img src="image/project%201.png" height="450" width="600" /></p>    
+<p><img src="image/project%202.png" height="400" width="600" /></p>   
+</section>
+    
+  </main>
+</body>
+</html>
